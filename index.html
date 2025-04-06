@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر الشيمي - تصميم عصري وجذاب</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: 'LucideIcons';
+            src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
+        }
+        .lucide {
+            font-family: 'LucideIcons';
+            font-size: 1.25rem; /* Adjust size as needed */
+            line-height: 1;
+            display: inline-block; /* Ensures proper alignment */
+            vertical-align: middle; /* Better alignment with text */
+        }
+        /* Add Inter font from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Lighter gray background */
+        }
+        /* Custom scrollbar (optional, for aesthetics) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; /* Tailwind gray-400 */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; /* Tailwind gray-500 */
+        }
+        /* Simple pulse animation for Add to Cart */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .8; }
+        }
+        .animate-pulse-subtle {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Gradient text for titles */
+         .gradient-text {
+            background: linear-gradient(to right, #3b82f6, #1e40af); /* blue-500 to blue-800 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+    <script>
+      // Extend Tailwind configuration
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: '#60a5fa', // blue-400
+                DEFAULT: '#2563eb', // blue-600
+                dark: '#1d4ed8', // blue-700
+              },
+              secondary: '#f59e0b', // amber-500
+              accent: '#10b981', // emerald-500
+            },
+            boxShadow: {
+              'custom-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.07)', // Softer large shadow
+            },
+            borderRadius: {
+                'xl': '1rem', // Default xl
+                '2xl': '1.5rem', // Larger radius
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-slate-50">
+
+    <header class="bg-gradient-to-r from-primary to-primary-dark text-white text-center py-12 md:py-16 shadow-lg relative overflow-hidden">
+         <div class="absolute inset-0 opacity-10 -z-10">
+             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="a" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="scale(2) rotate(0)"><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,1)"/><path d="M10-10v40M-10 10h40" stroke-width="1" stroke="hsla(216, 87%, 65%, 0.5)" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill="url(#a)"/></svg>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-3 drop-shadow-md">متجر الشيمي</h1>
+            <p class="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">وجهتك الأولى لأفضل أدوات المطبخ والأجهزة المنزلية العصرية</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-10 md:py-16">
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center">
+                <span class="gradient-text">تصفح أقسامنا</span>
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-8">
+                <a href="#" class="group block bg-white rounded-2xl p-5 shadow-custom-lg text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <img src="https://placehold.co/300x200/e0f2fe/075985?text=هاند+بليندر"
+                         alt="هاند بليندر"
+                         class="w-full h-28 object-contain rounded-lg mb-4 mx-auto transition-transform duration-300 group-hover:scale-105"
+                         onerror="this.onerror=null; this.src='https://placehold.co/300x200/e0e0e0/757575?text=Image+Not+Found';">
+                    <p class="mt-2 font-semibold text-neutral-800 group-hover:text-primary transition-colors duration-300">هاند بليندر</p>
+                </a>
+                 <a href="#" class="group block bg-white rounded-2xl p-5 shadow-custom-lg text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <img src="https://placehold.co/300x200/e0f2fe/075985?text=أكواب"
+                         alt="أكواب"
+                         class="w-full h-28 object-contain rounded-lg mb-4 mx-auto transition-transform duration-300 group-hover:scale-105"
+                         onerror="this.onerror=null; this.src='https://placehold.co/300x200/e0e0e0/757575?text=Image+Not+Found';">
+                    <p class="mt-2 font-semibold text-neutral-800 group-hover:text-primary transition-colors duration-300">أكواب ومجات</p>
+                </a>
+                 <a href="#" class="group block bg-white rounded-2xl p-5 shadow-custom-lg text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <img src="https://placehold.co/300x200/e0f2fe/075985?text=أطباق"
+                         alt="أطباق"
+                         class="w-full h-28 object-contain rounded-lg mb-4 mx-auto transition-transform duration-300 group-hover:scale-105"
+                         onerror="this.onerror=null; this.src='https://placehold.co/300x200/e0e0e0/757575?text=Image+Not+Found';">
+                    <p class="mt-2 font-semibold text-neutral-800 group-hover:text-primary transition-colors duration-300">أطباق التقديم</p>
+                </a>
+                 <a href="#" class="group block bg-white rounded-2xl p-5 shadow-custom-lg text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <img src="https://placehold.co/300x200/e0f2fe/075985?text=صيني"
+                         alt="صيني"
+                         class="w-full h-28 object-contain rounded-lg mb-4 mx-auto transition-transform duration-300 group-hover:scale-105"
+                         onerror="this.onerror=null; this.src='https://placehold.co/300x200/e0e0e0/757575?text=Image+Not+Found';">
+                    <p class="mt-2 font-semibold text-neutral-800 group-hover:text-primary transition-colors duration-300">أطقم صيني</p>
+                </a>
+                 <a href="#" class="group block bg-white rounded-2xl p-5 shadow-custom-lg text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <img src="https://placehold.co/300x200/e0f2fe/075985?text=رفايع"
+                         alt="رفايع المطبخ"
+                         class="w-full h-28 object-contain rounded-lg mb-4 mx-auto transition-transform duration-300 group-hover:scale-105"
+                         onerror="this.onerror=null; this.src='https://placehold.co/300x200/e0e0e0/757575?text=Image+Not+Found';">
+                    <p class="mt-2 font-semibold text-neutral-800 group-hover:text-primary transition-colors duration-300">رفايع المطبخ</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="mb-16">
+             <h2 class="text-3xl font-bold mb-8 text-center">
+                <span class="gradient-text">منتجاتنا المميزة</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-custom-lg overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-xl">
+                    <div class="relative overflow-hidden">
+                        <img src="https://placehold.co/600x400/bfdbfe/1e3a8a?text=هاند+بليندر+الشيمي"
+                             alt="هاند بليندر الشيمي 3 في 1"
+                             class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/e0e0e0/757575?text=Product+Image';">
+                         <div class="absolute top-3 right-3 bg-secondary text-white text-xs font-bold px-2 py-1 rounded-full shadow-md">عرض خاص</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors">هاند بليندر الشيمي 3 في 1</h3>
+                        <p class="text-neutral-600 text-sm mb-4 flex-grow">هاند بليندر قوي مع مضرب بيض وكبة لجميع احتياجات مطبخك.</p>
+                        <div class="flex justify-between items-center mt-auto pt-4 border-t border-slate-100">
+                            <span class="text-primary font-extrabold text-xl">450 ج.م</span>
+                            <button class="bg-gradient-to-r from-primary to-primary-dark text-white py-2 px-5 rounded-lg text-sm font-semibold hover:from-primary-dark hover:to-primary-dark transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-md hover:shadow-lg">
+                                <span class="lucide text-base">&#xe913;</span> أضف للسلة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-white rounded-2xl shadow-custom-lg overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-xl">
+                    <div class="relative overflow-hidden">
+                        <img src="https://placehold.co/600x400/bfdbfe/1e3a8a?text=طقم+أكواب"
+                             alt="طقم أكواب شاي زجاجي"
+                             class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/e0e0e0/757575?text=Product+Image';">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors">طقم أكواب شاي (6 قطع)</h3>
+                        <p class="text-neutral-600 text-sm mb-4 flex-grow">طقم أكواب شاي زجاجي بتصميم أنيق وعصري، مثالي للاستخدام اليومي والهدايا.</p>
+                        <div class="flex justify-between items-center mt-auto pt-4 border-t border-slate-100">
+                            <span class="text-primary font-extrabold text-xl">120 ج.م</span>
+                             <button class="bg-gradient-to-r from-primary to-primary-dark text-white py-2 px-5 rounded-lg text-sm font-semibold hover:from-primary-dark hover:to-primary-dark transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-md hover:shadow-lg">
+                                <span class="lucide text-base">&#xe913;</span> أضف للسلة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-custom-lg overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-xl">
+                     <div class="relative overflow-hidden">
+                        <img src="https://placehold.co/600x400/bfdbfe/1e3a8a?text=طقم+عشاء+صيني"
+                             alt="طقم عشاء صيني فاخر"
+                             class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/e0e0e0/757575?text=Product+Image';">
+                         <div class="absolute top-3 right-3 bg-accent text-white text-xs font-bold px-2 py-1 rounded-full shadow-md">الأكثر مبيعًا</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors">طقم عشاء صيني (24 قطعة)</h3>
+                        <p class="text-neutral-600 text-sm mb-4 flex-grow">طقم عشاء فاخر من البورسلين يكفي 6 أفراد، تصميم كلاسيكي بنقوش رقيقة.</p>
+                        <div class="flex justify-between items-center mt-auto pt-4 border-t border-slate-100">
+                            <span class="text-primary font-extrabold text-xl">2500 ج.م</span>
+                             <button class="bg-gradient-to-r from-primary to-primary-dark text-white py-2 px-5 rounded-lg text-sm font-semibold hover:from-primary-dark hover:to-primary-dark transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-md hover:shadow-lg">
+                                <span class="lucide text-base">&#xe913;</span> أضف للسلة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-recommendations-section" class="mb-16 bg-gradient-to-r from-blue-50 to-indigo-50 py-12 rounded-2xl">
+             <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">
+                    <span class="gradient-text">مقترح خصيصًا لك</span>
+                 </h2>
+                 <div id="recommendations-output" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <p class="text-neutral-600 col-span-full text-center">جاري تحميل التوصيات...</p>
+                 </div>
+             </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center">
+                <span class="gradient-text">ماذا يقول عملاؤنا؟</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <blockquote class="bg-white p-6 rounded-2xl shadow-custom-lg relative">
+                     <span class="lucide text-5xl text-primary opacity-10 absolute top-4 right-4">&#xe87a;</span> <p class="text-lg italic text-neutral-700 mb-4 z-10 relative">"لقيت كل الرفايع اللي محتاجاها للمطبخ بجودة ممتازة وأسعار حلوة! الموقع سهل ومريح."</p>
+                    <footer class="mt-2 text-sm text-neutral-500 font-medium">- فاطمة من الجيزة</footer>
+                </blockquote>
+                <blockquote class="bg-white p-6 rounded-2xl shadow-custom-lg relative">
+                     <span class="lucide text-5xl text-primary opacity-10 absolute top-4 right-4">&#xe87a;</span> <p class="text-lg italic text-neutral-700 mb-4 z-10 relative">"الهاند بليندر رائع وعملي جداً، والتوصيل كان سريع. شكراً لمتجر الشيمي."</p>
+                    <footer class="mt-2 text-sm text-neutral-500 font-medium">- أحمد من الإسكندرية</footer>
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="product-detail" class="mb-16 hidden">
+             <h2 class="text-3xl font-bold mb-8 text-center">
+                <span class="gradient-text">تفاصيل المنتج</span>
+            </h2>
+            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-custom-lg md:flex md:gap-8 items-start">
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                     <img src="https://placehold.co/600x400/bfdbfe/1e3a8a?text=Product+Detail"
+                         alt="تفاصيل المنتج"
+                         class="w-full h-auto object-cover rounded-xl shadow-md"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/e0e0e0/757575?text=Product+Image';">
+                 </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl lg:text-3xl font-bold mb-3 text-neutral-900">اسم المنتج هنا</h3>
+                    <p class="text-neutral-700 mb-5 leading-relaxed">وصف تفصيلي للمنتج يظهر هنا، يشرح الميزات والفوائد بشكل جذاب...</p>
+                    <ul class="text-sm text-neutral-600 mb-6 space-y-2">
+                        <li class="flex items-center"><span class="lucide text-accent mr-2 text-lg">&#xe65e;</span> ميزة رائعة رقم 1</li>
+                        <li class="flex items-center"><span class="lucide text-accent mr-2 text-lg">&#xe65e;</span> ميزة إضافية مهمة</li>
+                        <li class="flex items-center"><span class="lucide text-accent mr-2 text-lg">&#xe65e;</span> ميزة ثالثة لا غنى عنها</li>
+                    </ul>
+                    <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <span class="text-primary font-extrabold text-3xl">000 ج.م</span>
+                        <button class="w-full sm:w-auto bg-gradient-to-r from-primary to-primary-dark text-white py-3 px-8 rounded-lg text-base font-semibold hover:from-primary-dark hover:to-primary-dark transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
+                            <span class="lucide text-lg">&#xe913;</span> أضف إلى السلة
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-neutral-900 text-neutral-400 py-10 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">&copy; 2025 متجر الشيمي. جميع الحقوق محفوظة.</p>
+            <div class="flex justify-center space-x-4 space-x-reverse mb-4">
+                <a href="#" class="hover:text-white transition-colors"><span class="lucide">&#xe741;</span></a> <a href="#" class="hover:text-white transition-colors"><span class="lucide">&#xe7f9;</span></a> <a href="#" class="hover:text-white transition-colors"><span class="lucide">&#xea12;</span></a> </div>
+            <p class="text-sm">تصميم وتطوير بإبداع</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mock AI Core for recommendations
+        class AICore {
+            constructor(config) {
+                this.config = config;
+                this.userId = null;
+                // console.log("AI Core Initialized", config); // Keep console logs minimal for production
+            }
+
+            startSession(userId) {
+                this.userId = userId;
+                // console.log(`Session started for user: ${userId}`);
+                return true;
+            }
+
+            // Returns mock product recommendations based on the new categories
+            getRecommendations() {
+                // In a real scenario, this would fetch data based on user behavior
+                return [
+                    {
+                        id: 'rec1',
+                        name: 'طقم أطباق تقديم أرابيسك',
+                        description: 'طقم أطباق تقديم بورسلين بتصميم أرابيسك مميز (4 قطع).',
+                        price: '350 ج.م',
+                        imageUrl: 'https://placehold.co/600x400/ccfbf1/0f766e?text=طقم+أطباق' // Use accent color scheme
+                    },
+                    {
+                        id: 'rec2',
+                        name: 'طقم مجات قهوة سيراميك',
+                        description: 'طقم مجات قهوة من السيراميك بألوان متنوعة (4 مجات).',
+                        price: '180 ج.م',
+                        imageUrl: 'https://placehold.co/600x400/ccfbf1/0f766e?text=طقم+مجات'
+                    },
+                    {
+                        id: 'rec3',
+                        name: 'قطاعة خضروات يدوية',
+                        description: 'قطاعة خضروات يدوية متعددة الشفرات لتسهيل تحضير السلطات.',
+                        price: '95 ج.م',
+                        imageUrl: 'https://placehold.co/600x400/ccfbf1/0f766e?text=قطاعة+خضروات'
+                    }
+                ];
+            }
+        }
+
+        // Initialize AI
+        const ai = new AICore({
+            predictionModel: "v1.0-basic",
+            realTimeAdaptation: true,
+            language: "ar"
+        });
+
+        // Start session for a guest user
+        ai.startSession("guest-user-789");
+
+        // Get recommendations
+        const recommendations = ai.getRecommendations();
+
+        // Display recommendations
+        const recOutputDiv = document.getElementById("recommendations-output");
+        if (recOutputDiv) { // Check if element exists
+             if (recommendations && recommendations.length > 0) {
+                // Simulate loading delay for visual effect
+                setTimeout(() => {
+                    recOutputDiv.innerHTML = ""; // Clear loading message
+                    recommendations.forEach(rec => {
+                        // Use the same card structure as featured products for consistency
+                        const card = document.createElement("div");
+                        card.className = "bg-white rounded-2xl shadow-custom-lg overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-xl"; // Match product card style
+                        card.innerHTML = `
+                            <div class="relative overflow-hidden">
+                                <img src="${rec.imageUrl}"
+                                     alt="${rec.name}"
+                                     class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/e0e0e0/757575?text=Recommendation';">
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow">
+                                <h3 class="text-lg font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors">${rec.name}</h3>
+                                <p class="text-neutral-600 text-sm mb-4 flex-grow">${rec.description}</p>
+                                <div class="flex justify-between items-center mt-auto pt-4 border-t border-slate-100">
+                                    <span class="text-primary font-extrabold text-xl">${rec.price}</span>
+                                    <button class="bg-gradient-to-r from-primary to-primary-dark text-white py-2 px-5 rounded-lg text-sm font-semibold hover:from-primary-dark hover:to-primary-dark transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-md hover:shadow-lg">
+                                        <span class="lucide text-base">&#xe913;</span> أضف للسلة
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                        recOutputDiv.appendChild(card);
+                    });
+                }, 500); // 0.5 second delay
+            } else {
+                 recOutputDiv.innerHTML = '<p class="text-neutral-600 col-span-full text-center">لا توجد توصيات متاحة حاليًا.</p>';
+            }
+        } else {
+            console.error("Element with ID 'recommendations-output' not found.");
+        }
+
+        // Optional: Add more interaction logic here
+
+    </script>
+
+</body>
+</html>
